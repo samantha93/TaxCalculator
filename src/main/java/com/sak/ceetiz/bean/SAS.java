@@ -2,7 +2,7 @@ package com.sak.ceetiz.bean;
 
 public class SAS extends AbstractCompany {
 
-    private static final double SAS_PERCENTAGE = 25;
+    private static final double SAS_PERCENTAGE = 33;
 
     private final String siret;
 
