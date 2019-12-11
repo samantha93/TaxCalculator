@@ -2,14 +2,20 @@ package com.sak.ceetiz.bean;
 
 public abstract class AbstractCompany implements Company {
 
+	private final String siret;
+
+	private final String name;
+
     private final double capital;
 
     private final double percentage;
 
-    public AbstractCompany(double capital, double percentage) {
-        if (capital < 0 || percentage < 0) {
+    public AbstractCompany(String siret, String name, double capital, double percentage) {
+		if (capital < 0 || percentage < 0) {
             throw new IllegalArgumentException("capital and percentage should be positive");
         }
+		this.siret = siret;
+		this.name = name;
         this.capital = capital;
         this.percentage = percentage;
     }
@@ -19,7 +25,15 @@ public abstract class AbstractCompany implements Company {
         return capital * percentage / 100;
     }
 
-    public String getCapital() {
+	protected String getSiret() {
+		return siret;
+	}
+
+	protected String getName() {
+		return name;
+	}
+
+	public String getCapital() {
         return String.format("%.2f€", capital);
     }
 

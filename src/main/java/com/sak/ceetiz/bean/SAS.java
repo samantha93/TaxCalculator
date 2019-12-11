@@ -4,25 +4,11 @@ public class SAS extends AbstractCompany {
 
     private static final double SAS_PERCENTAGE = 33;
 
-    private final String siret;
-
-    private final String name;
-
     private final String address;
 
     public SAS(double capital, String siret, String name, String address) {
-        super(capital, SAS_PERCENTAGE);
-        this.siret = siret;
-        this.name = name;
+        super(siret, name, capital, SAS_PERCENTAGE);
         this.address = address;
-    }
-
-    public String getSiret() {
-        return siret;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getAddress() {
@@ -32,8 +18,8 @@ public class SAS extends AbstractCompany {
     @Override
     public String toString() {
         return "SAS{" +
-                "siret='" + siret + '\'' +
-                ", name='" + name + '\'' +
+                "siret='" + getSiret() + '\'' +
+                ", name='" + getName() + '\'' +
                 ", address='" + address + '\'' +
                 ", capital='" + getCapital() + '\'' +
                 '}';

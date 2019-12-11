@@ -28,7 +28,7 @@ public class AbstractCompanyTest {
     public static class NegativeValueCompany extends AbstractCompany {
 
         public NegativeValueCompany(double capital, double percentage) {
-            super(capital, percentage);
+            super("siret", "name", capital, percentage);
         }
     }
 }
